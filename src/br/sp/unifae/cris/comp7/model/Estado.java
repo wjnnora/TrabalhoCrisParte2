@@ -92,7 +92,10 @@ public class Estado  implements java.io.Serializable {
         return daoEstado.listar();
     }
 
-
+    public List lista(){
+        DAOEstado daoEstado = new DAOEstado();
+        return daoEstado.listar();
+    }
 
 
 }
