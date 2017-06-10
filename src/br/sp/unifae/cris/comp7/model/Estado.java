@@ -77,21 +77,6 @@ public class Estado  implements java.io.Serializable {
         daoEstado.armazenar(this);
     }
 
-    public void alterar() {
-        DAOEstado daoEstado = new DAOEstado();
-        daoEstado.alterar(this);
-    }
-
-    public void excluir() {
-        DAOEstado daoEstado = new DAOEstado();
-        daoEstado.excluir(this);
-    }
-
-    public List listar() {
-        DAOEstado daoEstado = new DAOEstado();
-        return daoEstado.listar();
-    }
-
     public List lista(){
         DAOEstado daoEstado = new DAOEstado();
         return daoEstado.listar();
