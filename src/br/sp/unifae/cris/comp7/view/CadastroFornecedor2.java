@@ -2,6 +2,7 @@ package br.sp.unifae.cris.comp7.view;
 
 //<editor-fold defaultstate="collapsed" desc="Importações">
 import br.sp.unifae.cris.comp7.model.Fornecedor;
+import br.sp.unifae.cris.comp7.model.Estado;
 import br.sp.unifae.cris.comp7.utils.Generica;
 import br.sp.unifae.cris.comp7.model.dao.DAOFornecedor;
 import br.sp.unifae.cris.comp7.utils.interfaces.ITela;
@@ -41,7 +42,7 @@ public class CadastroFornecedor2 extends Template implements ITela{
     JTextField jTextFieldCidade;
     JFormattedTextField jFormattedTextFieldCpnfOuCnpj;
     
-    JComboBox <String> jComboBoxEstado;
+    JComboBox <Estado.> jComboBoxEstado;
     
     JRadioButton jRadioButtonFisica;
     JRadioButton jRadioButtonJuridica;

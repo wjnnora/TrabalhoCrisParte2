@@ -1,6 +1,6 @@
 package br.sp.unifae.cris.comp7.model.dao;
 
-import br.sp.unifae.cris.comp7.model.Fornecedor;
+import br.sp.unifae.cris.comp7.model.Estado;
 import java.util.List;
 import javax.swing.JOptionPane;
 import org.hibernate.Session;
@@ -9,9 +9,9 @@ import org.hibernate.Session;
  *
  * @author Nora
  */
-public class DAOFornecedor {
+public class DAOEstado {
     
-    public void armazenar(Fornecedor fornecedor) {
+    public void armazenar(Estado estado) {
  
 
         Session session = DAOHibernateUtil.getSession();
@@ -19,9 +19,9 @@ public class DAOFornecedor {
         try {
  
             session.beginTransaction(); // Abre-se uma transação
-            session.save(fornecedor);      // Acumula a operação de gravação do objeto produto no BD, na transação
+            session.save(estado);      // Acumula a operação de gravação do objeto produto no BD, na transação
             session.getTransaction().commit();   // Realiza definitivamente todas as operações pendentes na transação
-            JOptionPane.showMessageDialog(null, "Fornecedor armazenado com sucesso");
+            JOptionPane.showMessageDialog(null, "Estado armazenado com sucesso");
  
         } catch (Exception ex) {
             JOptionPane.showMessageDialog(null, ex);
@@ -29,16 +29,16 @@ public class DAOFornecedor {
         }
     }
     
-    public void alterar(Fornecedor fornecedor) {
+    public void alterar(Estado estado) {
  
         Session session = DAOHibernateUtil.getSession();
  
         try {
  
             session.beginTransaction(); // Abre-se uma transação
-            session.merge(fornecedor);      // Acumula a operação de alteração do objeto produto no BD, na transação
+            session.merge(estado);      // Acumula a operação de alteração do objeto produto no BD, na transação
             session.getTransaction().commit();   // Realiza definitivamente todas as operações pendentes na transação
-            JOptionPane.showMessageDialog(null, "Fornecedor alterado com sucesso");
+            JOptionPane.showMessageDialog(null, "Estado alterado com sucesso");
  
         } catch (Exception ex) {
             JOptionPane.showMessageDialog(null, ex);
@@ -46,16 +46,16 @@ public class DAOFornecedor {
         }
     }
     
-    public void excluir(Fornecedor fornecedor) {
+    public void excluir(Estado estado) {
  
         Session session = DAOHibernateUtil.getSession();
  
         try {
  
             session.beginTransaction(); // Abre-se uma transação
-            session.delete(fornecedor);    // Acumula a operação de exclusão do objeto produto no BD, na transação
+            session.delete(estado);    // Acumula a operação de exclusão do objeto produto no BD, na transação
             session.getTransaction().commit();   // Realiza definitivamente todas as operações pendentes na transação
-            JOptionPane.showMessageDialog(null, "Fornecedor excluído com sucesso");
+            JOptionPane.showMessageDialog(null, "Estado excluído com sucesso");
  
         } catch (Exception ex) {
             JOptionPane.showMessageDialog(null, ex);
@@ -65,16 +65,16 @@ public class DAOFornecedor {
     
     public List listar() {
         Session session = DAOHibernateUtil.getSession();
-        List listaFornecedor = null;
+        List listaEstado = null;
         try {
             session.beginTransaction();           
-            listaFornecedor = session.createQuery("From Fornecedor").list();
+            listaEstado = session.createQuery("From Estado").list();
         } catch (Exception ex) {
             JOptionPane.showMessageDialog(null, ex);
         }
         finally{
             session.close();
-            return listaFornecedor;
+            return listaEstado;
         }
     }
 }
